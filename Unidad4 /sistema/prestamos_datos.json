@@ -1,0 +1,202 @@
+{
+  "alumnos": [
+    {
+      "nombre": "Juanito",
+      "nume_control": 26040200,
+      "carrera": "Ingenieria en IA"
+    },
+    {
+      "nombre": "Pedro",
+      "nume_control": 26040201,
+      "carrera": "Ingenieria en sistemas"
+    },
+    {
+      "nombre": "Jose",
+      "nume_control": 26040202,
+      "carrera": "Ingenieria en IA"
+    },
+    {
+      "nombre": "Maria",
+      "nume_control": 26040203,
+      "carrera": "Ingenieria en informatica"
+    },
+    {
+      "nombre": "Jimena",
+      "nume_control": 26040204,
+      "carrera": "Ingenieria en IA"
+    }
+  ],
+  "admins": [
+    {
+      "nombre": "Gabriel",
+      "nume_control": 123456,
+      "ocupacion": "Profesor"
+    },
+    {
+      "nombre": "Enrique",
+      "nume_control": 234567,
+      "ocupacion": "Profesor"
+    }
+  ],
+  "computadoras": [
+    {
+      "id": "PC-LC1-01",
+      "aula": "LC1",
+      "software": "Python, VS Code",
+      "estado": "Prestada",
+      "usuario": 26040203
+    },
+    {
+      "id": "PC-LC1-02",
+      "aula": "LC1",
+      "software": "Python, Java, VS Code",
+      "estado": "Disponible",
+      "usuario": ""
+    },
+    {
+      "id": "PC-LC1-03",
+      "aula": "LC1",
+      "software": "AUTOCAD, MATLAB",
+      "estado": "Disponible",
+      "usuario": ""
+    },
+    {
+      "id": "PC-LC2-01",
+      "aula": "LC2",
+      "software": "Python, VS Code",
+      "estado": "Prestada",
+      "usuario": 123456
+    },
+    {
+      "id": "PC-LC2-02",
+      "aula": "LC2",
+      "software": "Python, Java, VS Code",
+      "estado": "Prestada",
+      "usuario": 123456
+    },
+    {
+      "id": "PC-LC2-03",
+      "aula": "LC2",
+      "software": "AUTOCAD, MATLAB",
+      "estado": "Disponible",
+      "usuario": ""
+    },
+    {
+      "id": "PC-LC3-01",
+      "aula": "LC3",
+      "software": "Python, VS Code",
+      "estado": "Disponible",
+      "usuario": ""
+    },
+    {
+      "id": "PC-LC3-02",
+      "aula": "LC3",
+      "software": "Python, Java, VS Code",
+      "estado": "Disponible",
+      "usuario": ""
+    },
+    {
+      "id": "PC-LC3-03",
+      "aula": "LC3",
+      "software": "AUTOCAD, MATLAB",
+      "estado": "Disponible",
+      "usuario": ""
+    },
+    {
+      "id": "PC-LC3-04",
+      "aula": "LC3",
+      "software": "Python, VS Code",
+      "estado": "Mantenimiento",
+      "usuario": ""
+    }
+  ],
+  "historial": [
+    {
+      "usuario": 26040200,
+      "computadora": "PC-LC1-01",
+      "software": "python",
+      "tipo": "Prestada",
+      "fecha_tramite": "19/10/2026 18:22"
+    },
+    {
+      "usuario": 123456,
+      "computadora": "PC-LC1-02",
+      "software": "Python, Java, VS Code",
+      "tipo": "Prestada",
+      "fecha_tramite": "21/10/2026 16:10"
+    },
+    {
+      "usuario": 123456,
+      "computadora": "PC-LC1-01",
+      "software": "python",
+      "tipo": "Prestada",
+      "fecha_tramite": "08/11/2026 21:16"
+    },
+    {
+      "usuario": 123456,
+      "computadora": "PC-LC1-02",
+      "software": "python",
+      "tipo": "Prestada",
+      "fecha_tramite": "08/11/2026 21:16"
+    },
+    {
+      "usuario": 123456,
+      "computadora": "PC-LC2-01",
+      "software": "python",
+      "tipo": "Prestada",
+      "fecha_tramite": "08/11/2026 21:16"
+    },
+    {
+      "usuario": 123456,
+      "computadora": "PC-LC2-02",
+      "software": "python",
+      "tipo": "Prestada",
+      "fecha_tramite": "08/11/2026 21:16"
+    },
+    {
+      "usuario": 26040200,
+      "computadora": "PC-LC1-01",
+      "software": "python",
+      "tipo": "Reservada",
+      "fecha_tramite": "10/11/2026 17:01",
+      "fecha_programada": "12/11/2026"
+    },
+    {
+      "usuario": 26040201,
+      "computadora": "PC-LC1-01",
+      "software": "python",
+      "tipo": "Reservada",
+      "fecha_tramite": "10/11/2026 17:02",
+      "fecha_programada": "11/11/2026"
+    },
+    {
+      "usuario": 26040203,
+      "computadora": "PC-LC1-01",
+      "software": "python",
+      "tipo": "Prestada",
+      "fecha_tramite": "10/11/2026 18:00"
+    },
+    {
+      "usuario": 123456,
+      "computadora": "PC-LC1-02",
+      "software": "python",
+      "tipo": "Prestada",
+      "fecha_tramite": "10/11/2026 18:43"
+    }
+  ],
+  "necesidades_software": [],
+  "reservas": [
+    {
+      "id_pc": "PC-LC1-01",
+      "usuario": 26040200,
+      "fecha": "12/11/2026",
+      "software": "python"
+    },
+    {
+      "id_pc": "PC-LC1-01",
+      "usuario": 26040201,
+      "fecha": "11/11/2026",
+      "software": "python"
+    }
+  ]
+}
