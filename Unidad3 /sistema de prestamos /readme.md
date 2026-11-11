@@ -1,2 +1,0 @@
-
-sistema de prestamos
