@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Computadoras</h2>
+
+<form method="post" action="{{ url_for('prestamo') }}" class="row g-2 mb-4">
+  <div class="col-auto">
+    <input type="text" name="programa" class="form-control" placeholder="Software (ej. python)" required>
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary">Solicitar préstamo</button>
+  </div>
+</form>
+
+<table class="table table-striped bg-white">
+  <thead>
+    <tr>
+      <th>Aula</th><th>ID</th><th>Software</th><th>Estado</th><th>Usuario</th><th>Reservas</th><th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for pc in computadoras %}
+    <tr>
+      <td>{{ pc.aula }}</td>
+      <td>{{ pc.id }}</td>
+      <td>{{ pc.software }}</td>
+      <td>
+        {% if pc.estado == "Disponible" %}
+          <span class="badge bg-success">Disponible</span>
+        {% elif pc.estado == "Prestada" %}
+          <span class="badge bg-warning text-dark">Prestada</span>
+        {% else %}
+          <span class="badge bg-secondary">{{ pc.estado }}</span>
+        {% endif %}
+      </td>
+      
+      <td>{{ pc.usuario }}</td>
+      
+      <td>
+        {% for r in reservas if r.id_pc == pc.id %}
+          <form method="post" action="{{ url_for('cancelar', id_pc=pc.id) }}" class="d-flex align-items-center gap-2 mb-1">
+            <span>{{ r.fecha }} ({{ r.usuario }})</span>
+            {% if soy_admin or r.usuario == num_control %}
+              <input type="hidden" name="fecha" value="{{ r.fecha }}">
+              <button class="btn btn-sm btn-outline-secondary py-0">Cancelar</button>
+            {% endif %}
+          </form>
+        {% endfor %}
+      </td>
+
+      <td>
+        {% if pc.estado == "Prestada" and (soy_admin or pc.usuario == num_control) %}
+          <form method="post" action="{{ url_for('devolver', id_pc=pc.id) }}">
+            <button class="btn btn-sm btn-outline-danger">Devolver</button>
+          </form>
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
