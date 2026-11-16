@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Buscar por software</h2>
+
+<form method="get" action="{{ url_for('buscar') }}" class="row g-2 mb-4">
+  <div class="col-auto">
+    <input type="text" name="programa" value="{{ programa }}" class="form-control" placeholder="Software" required>
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary">Buscar</button>
+    <a href="{{ url_for('inicio') }}" class="btn btn-secondary mt-3">Volver al inicio</a>
+  </div>
+</form>
+
+{% if programa %}
+  {% if resultados %}
+  <table class="table table-striped bg-white">
+    <thead>
+      <tr><th>ID</th><th>Aula</th><th>Software</th><th>Estado</th></tr>
+    </thead>
+    <tbody>
+      {% for pc in resultados %}
+      <tr>
+        <td>{{ pc.id }}</td><td>{{ pc.aula }}</td><td>{{ pc.software }}</td><td>{{ pc.estado }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No se encontraron computadoras con ese software.</p>
+  <form method="post" action="{{ url_for('necesidad') }}">
+    <input type="hidden" name="programa" value="{{ programa }}">
+    <button class="btn btn-outline-primary">Registrar "{{ programa }}" como software a futuro</button>
+  </form>
+  {% endif %}
+{% endif %}
+{% endblock %}

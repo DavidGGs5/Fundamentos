@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-4">
+    <h2 class="mb-3">Iniciar sesión</h2>
+    <form method="post">
+      <input type="text" name="num_control" class="form-control mb-3"
+             placeholder="Número de control" required autofocus>
+      <button class="btn btn-primary w-100">Entrar</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
